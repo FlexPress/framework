@@ -1,4 +1,4 @@
-theme-framework
+framework
 ===============
 
 Framework for WordPress theme
