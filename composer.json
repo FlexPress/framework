@@ -27,7 +27,7 @@
     "scripts": {
         "post-install-cmd": [
             "rm -rf ./public_html/wp/{wp-content,license.txt,readme.html,wp-config-sample.php}",
-            "curl -o ./config/salts.php https://api.wordpress.org/secret-key/1.1/salt/"
+            "curl https://api.wordpress.org/secret-key/1.1/salt/ >> ./config/salts.php"
         ]
     },
     "require": {
