@@ -31,19 +31,17 @@
         ]
     },
     "require": {
-        "php": ">=5.3.2",
+        "php": ">=5.4",
         "wordpress": "3.9.2",
         "fancyguy/webroot-installer": "1.1.0",
-        "fancyguy/wordpress-monolog": "dev-master",
         "wpackagist/advanced-custom-fields": "*"
     },
     "extra": {
         "webroot-dir": "public_html/wp",
         "webroot-package": "wordpress",
         "installer-paths": {
-            "public_html/content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "public_html/content/{$name}/": ["type:wordpress-muplugin"],
-            "public_html/content/themes/{$name}/": ["type:wordpress-theme"]
+            "public_html/content/themes/{$name}/": ["type:wordpress-theme"],
+            "public_html/content/plugins/{$name}/": ["type:wordpress-plugin"]
         }
     }
 }

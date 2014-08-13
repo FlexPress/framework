@@ -6,7 +6,7 @@ define('DB_PASSWORD', 'password');
 define('DB_HOST', 'localhost');
 
 define('WP_HOME', 'http://example.com');
-define('WP_SITEURL', 'http://example.com');
+define('WP_SITEURL', 'http://example.com/wp');
 
 define('SAVEQUERIES', true);
 define('WP_DEBUG', true);
