@@ -34,7 +34,27 @@
         "php": ">=5.4",
         "wordpress": "3.9.2",
         "fancyguy/webroot-installer": "1.1.0",
-        "wpackagist/advanced-custom-fields": "*"
+        "wpackagist-plugin/better-wp-security": "dev-master",
+        "wpackagist-plugin/timber-library": "dev-master",
+        "wpackagist-plugin/advanced-custom-fields": "dev-master",
+        "wpackagist-plugin/tinymce-advanced": "dev-master",
+        "symfony/http-foundation": "*",
+        "pimple/pimple": "*",
+        "flexpress/component-acf": "1.0.*",
+        "flexpress/component-controller": "1.0.*",
+        "flexpress/component-hooks": "1.0.*",
+        "flexpress/component-post-type": "1.0.*",
+        "flexpress/component-routing": "1.0.*",
+        "flexpress/component-shortcode": "1.0.*",
+        "flexpress/component-taxonomy": "1.0.*",
+        "flexpress/component-templating": "1.0.*",
+        "flexpress/component-theme": "1.0.*",
+        "flexpress/component-search": "1.0.*",
+        "flexpress/component-layout": "1.0.*",
+        "flexpress/component-image-size": "1.0.*",
+        "flexpress/component-orm": "1.0.*",
+        "flexpress/component-menu": "1.0.*"
+
     },
     "extra": {
         "webroot-dir": "public_html/wp",
