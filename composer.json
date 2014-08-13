@@ -24,6 +24,12 @@
             }
         }
     ],
+    "scripts": {
+        "post-install-cmd": [
+            "setup_scripts/clean_wp.sh",
+            "setup_scripts/generate_salts.sh"
+        ]
+    },
     "require": {
         "php": ">=5.3.2",
         "wordpress": "3.9.2",
