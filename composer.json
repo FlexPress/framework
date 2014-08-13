@@ -26,8 +26,8 @@
     ],
     "scripts": {
         "post-install-cmd": [
-            "setup_scripts/clean_wp.sh",
-            "setup_scripts/generate_salts.sh"
+            "rm -rf ./public_html/wp/{wp-content,license.txt,readme.html,wp-config-sample.php}",
+            "curl -o ./config/salts.php https://api.wordpress.org/secret-key/1.1/salt/"
         ]
     },
     "require": {
