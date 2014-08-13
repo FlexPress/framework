@@ -64,4 +64,9 @@
             "public_html/content/plugins/{$name}/": ["type:wordpress-plugin"]
         }
     }
+    "autoload": {
+        "psr-4": {
+            "FlexPress\\Theme\\": "public_html/content/themes/FlexPress"
+        }
+    }
 }
