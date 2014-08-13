@@ -33,7 +33,7 @@
     },
     "extra": {
         "webroot-dir": "public_html/wp",
-        "webroot-package": "wordpress/wordpress",
+        "webroot-package": "wordpress",
         "installer-paths": {
             "public_html/content/plugins/{$name}/": ["type:wordpress-plugin"],
             "public_html/content/{$name}/": ["type:wordpress-muplugin"],
