@@ -6,6 +6,7 @@ use FlexPress\Theme\Controllers\FrontPageController;
 use FlexPress\Theme\Controllers\PageController;
 use FlexPress\Theme\Controllers\SearchController;
 use FlexPress\Theme\Controllers\SingleController;
+use FlexPress\Theme\Fields\FlexibleLayoutProxy;
 use FlexPress\Theme\FlexPress;
 use FlexPress\Components\Hooks\Hooker;
 use FlexPress\Components\Layouts\Fields\FlexibleLayout;
@@ -146,7 +147,7 @@ class DependencyInjectionContainer extends \Pimple
     {
 
         $this["flexibleLayoutProxy"] = function ($c) {
-            return new \FlexPRess\Theme\Fields\FlexibleLayoutProxy($c);
+            return new FlexibleLayoutProxy($c);
         };
 
     }
@@ -279,7 +280,13 @@ class DependencyInjectionContainer extends \Pimple
         };
 
         $this['ACFHelper'] = function ($c) {
-            return new ACFHelper($c['objectStorage'], $c['objectStorage'], array(), array());
+            return new ACFHelper($c['objectStorage'], $c['objectStorage'], array(), array(
+                /**
+                 * enable this if you want to use the layouts functionality, you will also
+                 * need to install the advanced custom fields flexible fields plugin
+                 */
+                //$c["flexibleLayoutProxy"]
+            ));
         };
 
         $this['shortcodeHelper'] = function ($c) {
