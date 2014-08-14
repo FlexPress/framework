@@ -2,7 +2,9 @@
 
 namespace FlexPress\Theme;
 
-class FlexPress {
+use FlexPress\Components\Theme\AbstractTheme;
+
+class FlexPress extends AbstractTheme {
 
     /**
      *

@@ -175,8 +175,7 @@ class DependencyInjectionContainer extends \Pimple
 
 
         $this["layoutController"] = function ($c) {
-            return new LayoutController(array(
-                // Add your layouts here
+            return new LayoutController(array(// Add your layouts here
             ));
         };
 
@@ -264,32 +263,23 @@ class DependencyInjectionContainer extends \Pimple
         };
 
         $this['hooker'] = function ($c) {
-            return new Hooker($c['objectStorage'], array(
-                $c["ui"],
-                $c["acfPageType"]
-            ));
+            return new Hooker($c['objectStorage'], array());
         };
 
         $this['templatingFunctions'] = function ($c) {
-            return new TemplatingFunctions($c['objectStorage'], array(
-            ));
+            return new TemplatingFunctions($c['objectStorage'], array());
         };
 
         $this['taxonomyHelper'] = function ($c) {
-            return new TaxonomyHelper($c['objectStorage'], array(
-            ));
+            return new TaxonomyHelper($c['objectStorage'], array());
         };
 
         $this['postTypeHelper'] = function ($c) {
-            return new PostTypeHelper($c['objectStorage'], array(
-            ));
+            return new PostTypeHelper($c['objectStorage'], array());
         };
 
         $this['ACFHelper'] = function ($c) {
-            return new ACFHelper($c['objectStorage'], $c['objectStorage'], array(), array(
-                    $c["flexibleLayoutProxy"]
-                )
-            );
+            return new ACFHelper($c['objectStorage'], $c['objectStorage'], array(), array());
         };
 
         $this['shortcodeHelper'] = function ($c) {
@@ -297,8 +287,7 @@ class DependencyInjectionContainer extends \Pimple
         };
 
         $this['imageSizeHelper'] = function ($c) {
-            return new ImageSizeHelper($c['objectStorage'], array(
-            ));
+            return new ImageSizeHelper($c['objectStorage'], array());
         };
 
         $this['FlexPress'] = function ($c) {
@@ -311,8 +300,7 @@ class DependencyInjectionContainer extends \Pimple
                 $c['postTypeHelper'],
                 $c['ACFHelper'],
                 $c['shortcodeHelper'],
-                $c['imageSizeHelper'],
-                $c["navHelper"]
+                $c['imageSizeHelper']
             );
         };
 

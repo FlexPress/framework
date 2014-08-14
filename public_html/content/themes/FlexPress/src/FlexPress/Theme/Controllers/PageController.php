@@ -2,7 +2,7 @@
 
 namespace FlexPress\Theme\Controllers;
 
-use FlexPress\Components\Controller\TimberController;
+use FlexPress\Components\Controller\AbstractTimberController;
 
 class PageController extends AbstractTimberController
 {
