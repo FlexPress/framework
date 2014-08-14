@@ -38,8 +38,8 @@
         "wpackagist-plugin/timber-library": "dev-master",
         "wpackagist-plugin/advanced-custom-fields": "dev-master",
         "wpackagist-plugin/tinymce-advanced": "dev-master",
-        "symfony/http-foundation": "*",
-        "pimple/pimple": "*",
+        "symfony/http-foundation": "2.5.*",
+        "pimple/pimple": "1.1.*",
         "flexpress/component-acf": "1.0.*",
         "flexpress/component-controller": "1.0.*",
         "flexpress/component-hooks": "1.0.*",
@@ -63,10 +63,10 @@
             "public_html/content/themes/{$name}/": ["type:wordpress-theme"],
             "public_html/content/plugins/{$name}/": ["type:wordpress-plugin"]
         }
-    }
+    },
     "autoload": {
         "psr-4": {
-            "FlexPress\\Theme\\": "public_html/content/themes/FlexPress"
+            "FlexPress\\Theme\\": "public_html/content/themes/FlexPress/src/FlexPress/Theme"
         }
     }
 }
