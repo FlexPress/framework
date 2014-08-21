@@ -2,12 +2,12 @@
 
 namespace FlexPress\Theme\Controllers;
 
-use FlexPress\Components\Controller\AbstractTimberController;
-
-class SingleController extends AbstractTimberController
+class SingleController extends AbstractBaseController
 {
 
     /**
+     *
+     * Index Action
      *
      * @param $request
      * @return mixed|void
@@ -17,7 +17,7 @@ class SingleController extends AbstractTimberController
     public function indexAction($request)
     {
 
-        $context = \Timber::get_context();
+        $context = $this->getContext();
         $this->render('single.html.twig', $context);
 
     }

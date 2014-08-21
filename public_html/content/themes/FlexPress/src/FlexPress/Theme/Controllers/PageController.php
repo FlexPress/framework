@@ -2,12 +2,12 @@
 
 namespace FlexPress\Theme\Controllers;
 
-use FlexPress\Components\Controller\AbstractTimberController;
-
-class PageController extends AbstractTimberController
+class PageController extends AbstractBaseController
 {
 
     /**
+     *
+     * Index action
      *
      * @param $request
      * @return mixed|void
@@ -17,25 +17,40 @@ class PageController extends AbstractTimberController
     public function indexAction($request)
     {
 
-        $context = \Timber::get_context();
+        $context = $this->getContext();
         $this->render('page.twig', $context);
 
     }
 
+    /**
+     *
+     * Page not found action
+     *
+     * @param $request
+     * @author Tim Perry
+     *
+     */
     public function pageNotFoundAction($request)
     {
 
-        $context = \Timber::get_context();
+        $context = $this->getContext();
         $this->render('page--404.twig', $context);
 
     }
 
+    /**
+     *
+     * News page action
+     *
+     * @param $request
+     * @author Tim Perry
+     *
+     */
     public function newsAction($request)
     {
 
-        $context = \Timber::get_context();
+        $context = $this->getContext();
         $this->render('page--news.twig', $context);
 
     }
-
 }
