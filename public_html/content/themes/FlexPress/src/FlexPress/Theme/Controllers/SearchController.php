@@ -17,7 +17,7 @@ class SearchController extends AbstractBaseController
     public function indexAction($request)
     {
         $context = $this->getContext();
-        $context["Search"] = $this->dic['Search'];
+        $context["search"] = $this->dic['searchManager'];
 
         $this->render('search.twig', $context);
     }

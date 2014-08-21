@@ -2,6 +2,7 @@
 
 namespace FlexPress\Theme\DependencyInjection;
 
+use FlexPress\Components\Search\QueryBuilders\Text as TextQueryBuilder;
 use FlexPress\Theme\Controllers\FrontPageController;
 use FlexPress\Theme\Controllers\PageController;
 use FlexPress\Theme\Controllers\SearchController;
@@ -19,6 +20,7 @@ use FlexPress\Components\ACF\Helper as ACFHelper;
 use FlexPress\Components\Shortcode\Helper as ShortcodeHelper;
 use FlexPress\Components\ImageSize\Helper as ImageSizeHelper;
 use FlexPress\Components\Layouts\Controller as LayoutController;
+use FlexPress\Theme\Search\SearchManager;
 use Symfony\Component\HttpFoundation\Request;
 
 class DependencyInjectionContainer extends \Pimple
@@ -46,6 +48,7 @@ class DependencyInjectionContainer extends \Pimple
         $this->addTaxonomyConfigs();
         $this->addTemplateFunctionConfigs();
         $this->addHookableConfigs();
+        $this->addSearchConfigs();
         $this->addBaseThemeConfigs();
 
     }
@@ -176,7 +179,7 @@ class DependencyInjectionContainer extends \Pimple
 
 
         $this["layoutController"] = function ($c) {
-            return new LayoutController(array(// Add your layouts here
+            return new LayoutController(array( // Add your layouts here
             ));
         };
 
@@ -234,9 +237,38 @@ class DependencyInjectionContainer extends \Pimple
         // TODO: add twig template function configs
     }
 
+    /**
+     *
+     * Adds the hookable configs
+     *
+     * @author Tim Perry
+     *
+     */
     protected function addHookableConfigs()
     {
         // TODO: add hookable configs
+    }
+
+    /**
+     *
+     * Adds the search configs
+     *
+     * @author Tim Perry
+     *
+     */
+    protected function addSearchConfigs()
+    {
+
+        $this['textQueryBuilder'] = function () {
+            return new TextQueryBuilder();
+        };
+
+        $this['searchManager'] = function ($c) {
+            return new SearchManager($c['databaseAdapter'], $c['queue'], $c['request'], array(
+                $c['textQueryBuilder']
+            ));
+        };
+
     }
 
     /**
