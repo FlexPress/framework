@@ -18,7 +18,7 @@ class SingleController extends AbstractBaseController
     {
 
         $context = $this->getContext();
-        $this->render('single.html.twig', $context);
+        $this->render('single.twig', $context);
 
     }
 }
